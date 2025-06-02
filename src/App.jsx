@@ -8,11 +8,18 @@ function App() {
 
   return (
     <>
-      <div>
-        While I’m busy coding this site, why not take a break and say hi to my
-        friend’s pupper?{" "}
+      <div style={{ fontSize: 24 }}>
+        While I’m busy coding this site, why not take a break and <br />
+        say hi to my friend’s puppy, <b>Cheeku :)</b>?{" "}
       </div>
-      <img src="./cheeku.jpeg" height={500} alt="Cheeku" />
+      <div style={{ margin: "20px" }}>
+        <img
+          style={{ borderRadius: "16px" }}
+          src="./cheeku.jpeg"
+          height={500}
+          alt="Cheeku"
+        />
+      </div>
     </>
   );
 }
