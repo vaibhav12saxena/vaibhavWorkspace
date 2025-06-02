@@ -8,7 +8,11 @@ function App() {
 
   return (
     <>
-      <div>This is an upcoming webiste</div>
+      <div>
+        While I’m busy coding this site, why not take a break and say hi to my
+        friend’s pupper?{" "}
+      </div>
+      <img src="./cheeku.jpeg" height={500} alt="Cheeku" />
     </>
   );
 }
