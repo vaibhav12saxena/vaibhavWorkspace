@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 interface CardProps {
   name: string;
   description: string;
@@ -39,7 +40,14 @@ const Card: React.FC<CardProps> = ({
       }}
       onClick={handleLiveLinkClicked}
     >
-      <img src={imageLink} alt="project1" style={styles.img} />
+      <div style={styles.imageContainer}>
+        <Image
+          src={imageLink}
+          alt={`${name} project`}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
       <div style={styles.content}>
         <h2 style={styles.title}>{name}</h2>
         <p style={styles.description}>{description}</p>
@@ -71,22 +79,20 @@ const Card: React.FC<CardProps> = ({
 const styles: { [key: string]: React.CSSProperties } = {
   card: {
     width: "400px",
-    height: "200px",
-    padding: "20px",
+    height: "auto",
     margin: "20px",
     boxShadow: "0px 0px 10px rgba(0,0,0,0.2)",
     display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "center",
+    flexDirection: "column",
     cursor: "pointer",
     transition: "transform 0.2s ease, box-shadow 0.2s ease",
+    overflow: "hidden",
+    borderRadius: "10px",
   },
-  img: {
+  imageContainer: {
+    position: "relative",
     width: "100%",
-    height: "auto",
-    maxHeight: "180px",
-    objectFit: "cover",
-    borderRadius: "5px",
+    height: "200px",
   },
   content: {
     padding: "10px 0",

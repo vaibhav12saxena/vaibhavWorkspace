@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link"; // Adjust the import based on your routing library
 const HeroSection = () => {
   return (
     <section style={styles.container}>
@@ -9,15 +10,15 @@ const HeroSection = () => {
           Building performant, scalable, and elegant web applications.
         </p>
         <div style={styles.buttons}>
-          <a href="/about" style={styles.button}>
+          <Link href="/about" style={styles.button}>
             View Resume
-          </a>
-          <a href="/projects" style={styles.button}>
+          </Link>
+          <Link href="/projects" style={styles.button}>
             Projects
-          </a>
-          <a href="/contact" style={styles.button}>
+          </Link>
+          <Link href="/contact" style={styles.button}>
             Contact
-          </a>
+          </Link>
         </div>
       </div>
 
