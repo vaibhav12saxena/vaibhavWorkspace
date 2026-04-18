@@ -26,27 +26,6 @@ const HeroSection = () => {
           </Link>
         </div>
 
-        <div className={styles.contact}>
-          <a
-            href="https://github.com/vaibhav12saxena"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.contactLink}
-          >
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/vaibhavsaxena2/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.contactLink}
-          >
-            LinkedIn
-          </a>
-          <a href="mailto:vaibhav.saxena.iitd@gmail.com" className={styles.contactLink}>
-            Email
-          </a>
-        </div>
       </div>
 
       <div className={styles.imageWrapper}>

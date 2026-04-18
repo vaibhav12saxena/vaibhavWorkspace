@@ -27,7 +27,12 @@ const Card: React.FC<CardProps> = ({
   };
 
   const handleCardClicked = () => {
-    if (!comingSoon && liveLink) window.open(liveLink, "_blank");
+    if (comingSoon) return;
+    if (liveLink) {
+      window.open(liveLink, "_blank");
+    } else if (github) {
+      window.open(github, "_blank");
+    }
   };
 
   return (

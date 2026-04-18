@@ -1,12 +1,13 @@
 .header {
-  padding: 16px 24px;
+  padding: 14px 24px;
   border-bottom: 1px solid var(--border-color);
-  background-color: var(--background-color);
   position: sticky;
   top: 0;
   z-index: 100;
   backdrop-filter: blur(12px);
   background-color: rgba(255, 255, 255, 0.85);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 :global([data-theme="dark"]) .header {
@@ -22,15 +23,26 @@
 }
 
 .logo {
-  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+  color: #fff;
+  font-size: 15px;
   font-weight: 700;
-  color: var(--text-color);
   text-decoration: none;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 112, 243, 0.2);
+  flex-shrink: 0;
 }
 
 .logo:hover {
-  color: var(--primary-color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(0, 112, 243, 0.3);
 }
 
 .nav {
@@ -46,6 +58,7 @@
   font-size: 15px;
   transition: color 0.2s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 .link:hover {
@@ -65,4 +78,79 @@
 
 .link:hover::after {
   width: 100%;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 110;
+}
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--text-color);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.barOpen1 {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.barOpen2 {
+  opacity: 0;
+}
+
+.barOpen3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100vh;
+    background-color: var(--background-color);
+    border-left: 1px solid var(--border-color);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 32px 32px;
+    gap: 24px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+    z-index: 105;
+  }
+
+  :global([data-theme="dark"]) .nav {
+    background-color: var(--background-color);
+  }
+
+  .navOpen {
+    transform: translateX(0);
+  }
+
+  .link {
+    font-size: 17px;
+    padding: 4px 0;
+  }
+
+  .link::after {
+    display: none;
+  }
 }

@@ -27,7 +27,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=360&fit=crop",
   },
   {
-    name: "Designer Portfolio",
+    name: "UI/UX Design Portfolio - Freelance",
     tech: ["HTML", "CSS", "JavaScript"],
     description:
       "A clean, single-page portfolio website designed and built for a UI/UX designer showcasing projects, skills, and contact information.",
