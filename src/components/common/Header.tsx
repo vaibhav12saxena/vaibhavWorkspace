@@ -1,52 +1,24 @@
-import React from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header style={styles.header}>
-      <div style={styles.container}>
-        <nav style={styles.nav}>
-          <Link href="/" style={styles.link}>
-            Home
-          </Link>
-          <Link href="/projects" style={styles.link}>
-            Projects
-          </Link>
-          <Link href="/about" style={styles.link}>
-            About
-          </Link>
-          <Link href="/contact" style={styles.link}>
-            Contact
-          </Link>
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <Link href="/" className={styles.logo}>
+          VS
+        </Link>
+        <nav className={styles.nav}>
+          <Link href="/" className={styles.link}>Home</Link>
+          <Link href="/about" className={styles.link}>About</Link>
+          <Link href="/projects" className={styles.link}>Projects</Link>
+          <Link href="/contact" className={styles.link}>Contact</Link>
+          <ThemeToggle />
         </nav>
-        <ThemeToggle />
       </div>
     </header>
   );
-};
-
-const styles: { [key: string]: React.CSSProperties } = {
-  header: {
-    padding: "var(--spacing-lg)",
-    borderBottom: "1px solid var(--light-gray)",
-  },
-  container: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    maxWidth: "1200px",
-    margin: "0 auto",
-  },
-  nav: {
-    display: "flex",
-    gap: "var(--spacing-xl)",
-  },
-  link: {
-    textDecoration: "none",
-    color: "var(--text-color)",
-    fontWeight: "bold",
-  },
 };
 
 export default Header;

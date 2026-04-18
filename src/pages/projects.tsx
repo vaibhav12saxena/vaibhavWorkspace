@@ -1,16 +1,19 @@
-// pages/projects.tsx
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import { projects } from "@/data/projects";
 import Card from "@/components/common/card";
+import styles from "./projects.module.css";
 
 const Projects = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Header />
-      <main>
-        <h1>Projects</h1>
-        <div style={styles.projectGrid}>
+      <main className={styles.main}>
+        <h1 className={styles.title}>Projects</h1>
+        <p className={styles.subtitle}>
+          Things I&apos;ve built, from frontend systems to intelligent applications.
+        </p>
+        <div className={styles.projectGrid}>
           {projects.map((project, index) => (
             <Card
               key={index}
@@ -19,6 +22,8 @@ const Projects = () => {
               description={project.description}
               github={project.github}
               liveLink={project.liveLink}
+              comingSoon={"comingSoon" in project ? project.comingSoon : false}
+              image={"image" in project ? project.image : ""}
             />
           ))}
         </div>
@@ -27,38 +32,5 @@ const Projects = () => {
     </div>
   );
 };
-
-const styles: { [key: string]: React.CSSProperties } = {
-  container: {
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-  },
-  main: {
-    flex: 1,
-    padding: "2rem",
-  },
-  title: {
-    textAlign: "center",
-    marginBottom: "2rem",
-  },
-  projectGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-    gap: "2rem",
-    justifyItems: "center",
-  },
-};
-
-// Media query for larger screens
-if (
-  typeof window !== "undefined" &&
-  window.matchMedia("(min-width: 1024px)").matches
-) {
-  styles.projectGrid = {
-    ...styles.projectGrid,
-    gridTemplateColumns: "repeat(3, 1fr)",
-  };
-}
 
 export default Projects;

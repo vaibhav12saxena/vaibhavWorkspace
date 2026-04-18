@@ -1,18 +1,15 @@
-// pages/contact.tsx
-import Header from "@/components/common/Header"
-import Footer from "@/components/common/Footer"
-function Contact() {
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import ContactForm from "@/components/contact/ContactForm";
 
-    return (
-        <div>
-            <Header />
-            <main>
-                <h1>Contact Me</h1>
-            </main>
-            <Footer />
-        </div>
-    )
-  }
-
-  export default Contact;
-  
+export default function Contact() {
+  return (
+    <div>
+      <Header />
+      <main>
+        <ContactForm />
+      </main>
+      <Footer />
+    </div>
+  );
+}

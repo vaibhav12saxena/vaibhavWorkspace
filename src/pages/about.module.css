@@ -1,0 +1,230 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.delay1 { animation-delay: 0.15s; }
+.delay2 { animation-delay: 0.3s; }
+.delay3 { animation-delay: 0.45s; }
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--text-color);
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 17px;
+  color: var(--text-muted);
+  margin: 0 0 48px 0;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Company group styles */
+.companyGroup {
+  margin-bottom: 36px;
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  transition: box-shadow 0.3s ease;
+}
+
+.companyGroup:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.companyHeader {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.companyName {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 4px 0;
+}
+
+.companyMeta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.experienceItem {
+  margin-bottom: 24px;
+  padding-left: 16px;
+  border-left: 2px solid var(--border-color);
+  transition: border-color 0.2s ease;
+}
+
+.experienceItem:last-child {
+  margin-bottom: 0;
+}
+
+.experienceItem:hover {
+  border-left-color: var(--primary-color);
+}
+
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.role {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.duration {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.company {
+  font-size: 14px;
+  color: var(--primary-color);
+  margin: 0 0 8px 0;
+}
+
+.experienceDesc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.experienceList {
+  margin: 0;
+  padding-left: 18px;
+  list-style: none;
+}
+
+.experienceList li {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  padding-left: 4px;
+  margin-bottom: 8px;
+}
+
+.experienceList li::before {
+  content: "▸";
+  position: absolute;
+  left: -16px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.experienceList li:last-child {
+  margin-bottom: 0;
+}
+
+/* Skills */
+.skillCategory {
+  margin-bottom: 20px;
+}
+
+.skillCategoryTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skillBadge {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  cursor: default;
+}
+
+.skillBadge:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.education {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.educationDegree {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+@media (max-width: 640px) {
+  .experienceHeader {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .companyGroup {
+    padding: 16px;
+  }
+}
