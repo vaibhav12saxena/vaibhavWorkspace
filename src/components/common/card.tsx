@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./Card.module.css";
 
 interface CardProps {
@@ -33,7 +34,7 @@ const Card: React.FC<CardProps> = ({
     <div className={styles.card} onClick={handleCardClicked}>
       <div className={styles.imageContainer}>
         {image && (
-          <img src={image} alt={name} className={styles.cardImage} />
+          <Image src={image} alt={name} width={600} height={360} className={styles.cardImage} />
         )}
         {comingSoon && <span className={styles.comingSoon}>Coming Soon</span>}
       </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./HeroSection.module.css";
 
 const HeroSection = () => {
@@ -50,7 +51,7 @@ const HeroSection = () => {
 
       <div className={styles.imageWrapper}>
         <div className={styles.imageContainer}>
-          <img src="/assets/profile.jpeg" alt="Vaibhav Saxena" className={styles.image} />
+          <Image src="/assets/profile.jpeg" alt="Vaibhav Saxena" width={280} height={280} className={styles.image} />
         </div>
       </div>
     </section>
